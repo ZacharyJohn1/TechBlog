@@ -1,0 +1,32 @@
+<div class="row mt-4 row justify-content-center">
+  <div class="col-md-6">
+    <h2>Welcome, {{username}}!</h2>
+    <h3>Create a New Character:</h3> 
+    <button type="submit" class="btn btn-primary btn-dark ">
+      <a href="/characterSheet">Create</a>
+    </button>
+      
+      
+      
+    </form>
+  </div>
+
+  {{#if characters.length}}
+  <div class="col-md-6 character-list">
+    <h3>Current Posts:</h3>
+
+    {{#each character as |character|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/character/{{character.id}}">{{character.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{character.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
